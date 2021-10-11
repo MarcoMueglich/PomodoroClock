@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <script
+            src="https://kit.fontawesome.com/a2bd98052f.js"
+            crossorigin="anonymous"
+        ></script>
+        <title>Pomodoro Clock</title>
+    </head>
+    <body>
+        <div class="wrapper fullViewHeight fullWidth">
+            <h1 class="title">Pomodoro Clock</h1>
+            <div class="ui">
+                <div class="btnSection" id="modeBtns">
+                    <button class="modeBtn active" data-mode="pomodoro">
+                        Work
+                    </button>
+                    <button class="modeBtn" data-mode="shortBreak">
+                        Break
+                    </button>
+                    <button class="modeBtn" data-mode="longBreak">
+                        Long Break
+                    </button>
+                </div>
+                <div class="timerSection">
+                    <span class="timer">25:00</span>
+                </div>
+                <div class="btnSection">
+                    <div id="startBtn" class="controlBtn">
+                        <span>START</span>
+                    </div>
+                    <div id="stopBtn" class="controlBtn">
+                        <span>STOP</span>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <span class="footerText">&copy; Marco Müglich</span>
+                <div class="footerIcons">
+                    <i id="settingsBtn" class="fas fa-cog fa-3x"></i>
+                    <i id="infoBtn" class="fas fa-info fa-3x"></i>
+                </div>
+            </div>
+        </div>
+
+        <div id="infoModal" class="modal">
+            <div class="modalContent">
+                <span id="closeInfoBtn" class="close">&times;</span>
+                <h2 class="modalHeading">What is the pomodoro technique?</h2>
+                <p>
+                    The Pomodoro Technique is a time management method developed
+                    by Francesco Cirillo in the late 1980s.
+                </p>
+                <p>
+                    The technique uses a timer to break down work into
+                    intervals, traditionally 25 minutes in length, separated by
+                    short breaks. Each interval is known as a pomodoro, from the
+                    Italian word for 'tomato', after the tomato-shaped kitchen
+                    timer that Cirillo used as a university student.
+                </p>
+
+                <h2 class="modalHeading">
+                    The pomodoro technique works like this:
+                </h2>
+                <ol>
+                    <li>Decide on the task to be done.</li>
+                    <li>
+                        Start the pomodoro timer. The screen turns green and the
+                        timer starts to go down.
+                    </li>
+                    <li>Work on the task.</li>
+                    <li>End work when the screen turns yellow.</li>
+                    <li>Go back to work when the break timer is at zero.</li>
+                    <li>
+                        After the fourth promodoro there is a longer break and
+                        the screen turns orange.
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div id="settingsModal" class="modal">
+            <div class="modalContent">
+                <span id="closeSettingsBtn" class="close">&times;</span>
+                <div class="wrapper">
+                    <h2 class="modalHeading">Settings</h2>
+                    <div class="settingsGroup">
+                        <label>Work-Phase (Minutes)</label>
+                        <input id="workInput" type="number" value="25"></input>
+                    </div>
+                    <div class="settingsGroup">
+                        <label>Break-Phase (Minutes)</label>
+                        <input id="breakInput" type="number" value="5"></input>
+                    </div>
+                    <div class="settingsGroup">
+                        <label>Long Break (Minutes)</label>
+                        <input id="longBreakInput" type="number" value="15"></input>
+                    </div>
+                    <div class="settingsGroup">
+                        <label>Long Break Interval</label>
+                        <input id="intervalInput" type="number" value="4"></input>
+                    </div>
+                    <button id="acceptBtn" class="modalBtn">Accept</button>
+                    <p class="warningText">WARNING: Changing the settings will reset the clock!</p>
+                </div>
+            </div>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>

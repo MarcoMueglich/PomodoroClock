@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+:root {
+    --idle-bg-color-light: rgb(99, 101, 218);
+    --idle-bg-color-dark: rgb(67, 52, 134);
+    --pomodoro-bg-color-light: rgb(21, 131, 11);
+    --pomodoro-bg-color-dark: rgb(12, 68, 6);
+    --shortBreak-bg-color-light: rgb(184, 167, 16);
+    --shortBreak-bg-color-dark: rgb(75, 69, 6);
+    --longBreak-bg-color-light: rgb(226, 102, 31);
+    --longBreak-bg-color-dark: rgb(116, 58, 17);
+}
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: radial-gradient(transparent 50%, var(--idle-bg-color-dark)),
+        var(--idle-bg-color-light);
+    transition: background 0.25s;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+.fullViewHeight {
+    height: 100vh;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.title {
+    display: flex;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 8vh;
+    text-align: center;
+    color: black;
+    align-self: center;
+}
+
+.ui {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.timerSection {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.btnSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.timer {
+    font-family: monospace;
+    font-size: 25vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.modeBtn {
+    color: rgb(153, 153, 153);
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    font-size: 2vh;
+    width: 12vh;
+    height: 3vh;
+    margin: 0px 10px;
+    user-select: none;
+}
+
+.active {
+    color: white;
+    border: 2px solid white;
+}
+
+.controlBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-size: 3vh;
+    width: 20vh;
+    height: 7vh;
+    margin: 0px 10px;
+    transition: background 0.25s, color 0.25s;
+    user-select: none;
+}
+
+.controlBtn:hover {
+    background-color: white;
+    color: black;
+}
+
+#footer {
+    height: 10rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footerText {
+    font-size: 2vh;
+    padding-left: 5%;
+}
+
+.footerIcons {
+    display: flex;
+    gap: 3rem;
+    padding-right: 5%;
+}
+
+#footer i {
+    color: black;
+    transition: color 0.25s;
+}
+
+#footer i:hover {
+    color: white;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modalContent {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 45px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 40%;
+    max-width: 500px;
+}
+
+.modalContent p {
+    margin-bottom: 10px;
+}
+
+.modalHeading {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.modalBtn {
+    font-size: 1rem;
+    padding: 3px 10px;
+}
+
+.settingsGroup {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.settingsGroup input {
+    font-size: 1rem;
+    width: 50px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.warningText {
+    margin-top: 15px;
+    color: rgb(133, 133, 133);
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .timer {
+        font-size: 8em;
+    }
+
+    .title {
+        font-size: 3.5em;
+        padding: 0px 15%;
+    }
+
+    .footerIcons {
+        padding-right: 10%;
+    }
+
+    .controlBtn:hover {
+        background-color: black;
+        color: white;
+    }
+
+    .modalContent {
+        width: 70%;
+        padding: 20px;
+        margin: 5% auto;
+    }
+
+    .settingsGroup {
+        width: 90%;
+    }
+
+    .modeBtn {
+        font-size: 15px;
+        height: 30px;
+    }
+}
